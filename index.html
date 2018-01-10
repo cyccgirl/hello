@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*公共样式*/
+			ul{
+				list-style: none;
+				margin: 50px auto;
+				padding: 0px;
+				
+				width: 90%;
+				height: 500px;
+				background-color: #f0f0f0;
+			}
+			
+			ul li
+			{
+				width: 100px;
+				text-align: center;
+				height: 100px;
+				line-height: 100px;
+				background-color: yellow;
+				border: solid 1px black;
+			}
+			
+			/*第一个ul*/
+			ul:nth-of-type(1)
+			{
+				/*1. 在父盒子中加入开启伸缩模式*/
+				display: flex;
+				
+				/*侧轴的对齐方式*/
+				align-items: baseline;
+			}
+			ul:nth-of-type(1) li:nth-of-type(2)
+			{
+				height: 200px;
+				line-height: 200px;
+			}
+			ul:nth-of-type(1) li:nth-of-type(3)
+			{
+				height: 300px;
+				line-height: 300px;
+			}
+			
+			/*第二个ul*/
+			ul:nth-of-type(2)
+			{
+				/*开启伸缩*/
+				display: flex;
+				
+				/*侧轴的对齐方式*/
+				align-items: stretch;
+				
+				/*换行*/
+				flex-wrap: wrap;
+			}
+			
+			ul:nth-of-type(2) li
+			{
+				width: 380px;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<!--
+		侧轴的对齐方式
+		align-items：flex-start | flex-end | center | baseline | stretch
+		flex-start： 侧轴起始边界
+		flex-end： 侧轴结束边界
+		center： 侧轴（纵轴）居中放置
+		baseline： 文字基线对齐
+		stretch： 默认,一定要把子元素的高度属性值为'auto'
+		-->
+	</body>
+</html>
